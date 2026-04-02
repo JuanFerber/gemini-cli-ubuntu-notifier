@@ -1,0 +1,5 @@
+{
+  "name": "ubuntu-desktop-notifier",
+  "version": "1.0.0",
+  "description": "Notifica al usuario usando notify-send cuando la CLI termina un turno o requiere intervención."
+}

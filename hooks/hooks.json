@@ -1,0 +1,40 @@
+{
+  "hooks": {
+    "AfterAgent": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "name": "notify-turn-complete",
+            "type": "command",
+            "command": "${extensionPath}/scripts/notify-done.sh"
+          }
+        ]
+      }
+    ],
+    "Notification": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "name": "notify-permission-needed",
+            "type": "command",
+            "command": "${extensionPath}/scripts/notify-action.sh"
+          }
+        ]
+      }
+    ],
+    "BeforeTool": [
+      {
+        "matcher": "ask_user",
+        "hooks": [
+          {
+            "name": "notify-question-asked",
+            "type": "command",
+            "command": "${extensionPath}/scripts/notify-action.sh"
+          }
+        ]
+      }
+    ]
+  }
+}
