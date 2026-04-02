@@ -1,0 +1,5 @@
+# Ignorar todos los archivos temporales de bloqueo generados por el debounce
+tmp/*
+
+# Pero forzar a Git a que conserve el archivo oculto .gitkeep (y por ende, la carpeta)
+!tmp/.gitkeep

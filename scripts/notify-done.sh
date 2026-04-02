@@ -17,13 +17,14 @@ SOUND_FILE="/usr/share/sounds/freedesktop/stereo/message-new-instant.oga"
 # ID de sincronización para que las notificaciones se reemplacen en lugar de acumularse
 SYNC_ID="gemini-cli-status"
 # Archivo temporal para el control de debounce en el directorio local de la extensión
+mkdir -p "$EXT_DIR/tmp"
 LOCK_FILE="$EXT_DIR/tmp/done_lock"
 
 # --- MECANISMO ANTI-REBOTE (DEBOUNCE) ---
 # Previene ejecuciones duplicadas (condición de carrera) en un lapso de 3 segundos.
 # Delega la lógica al script utilidad externo.
 if ! "$SCRIPT_DIR/debounce.sh" "$LOCK_FILE" 3; then
-    exit 0 # Salir silenciosamente si el script de debounce indica que no pasó el tiempo
+  exit 0 # Salir silenciosamente si el script de debounce indica que no pasó el tiempo
 fi
 # --- REPRODUCCIÓN DE AUDIO ---
 # canberra-gtk-play es el estándar de GNOME para sonidos de sistema.

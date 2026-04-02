@@ -4,7 +4,8 @@
       {
         "matcher": "*",
         "sequential": true,
-        "hooks": [          {
+        "hooks": [
+          {
             "name": "notify-turn-complete",
             "type": "command",
             "command": "${extensionPath}/scripts/notify-done.sh"
@@ -16,7 +17,8 @@
       {
         "matcher": "*",
         "sequential": true,
-        "hooks": [          {
+        "hooks": [
+          {
             "name": "notify-permission-needed",
             "type": "command",
             "command": "${extensionPath}/scripts/notify-action.sh"
@@ -27,6 +29,7 @@
     "BeforeTool": [
       {
         "matcher": "ask_user",
+        "sequential": true,
         "hooks": [
           {
             "name": "notify-question-asked",
